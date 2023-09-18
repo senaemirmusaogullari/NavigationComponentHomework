@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.senaemirmusaogullari.upschoolsenahomework.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/homeToPersonal"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.senaemirmusaogullari.upschoolsenahomework.ui.PersonalInfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" >
+        <argument
+            android:name="ad"
+            app:argType="string" />
+        <argument
+            android:name="soyad"
+            app:argType="string" />
+        <action
+            android:id="@+id/personalToQuestion"
+            app:destination="@id/questionFragment"
+            app:popUpTo="@id/personalInfoFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.senaemirmusaogullari.upschoolsenahomework.ui.QuestionFragment"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" >
+        <argument
+            android:name="personalInfo"
+            app:argType="com.senaemirmusaogullari.upschoolsenahomework.model.Personal" />
+        <action
+            android:id="@+id/questionToResult"
+            app:destination="@id/resultFragment"
+            app:popUpTo="@id/questionFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.senaemirmusaogullari.upschoolsenahomework.ui.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <argument
+            android:name="question"
+            app:argType="com.senaemirmusaogullari.upschoolsenahomework.model.Question" />
+    </fragment>
+</navigation>

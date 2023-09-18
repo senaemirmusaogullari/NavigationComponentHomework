@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fon"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.HomeFragment">
+
+    <EditText
+        android:id="@+id/etAd"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/white"
+        android:inputType="text"
+        android:padding="12dp"
+        android:hint="Adınız"
+        android:textColorHint="@color/black"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/etSoyad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:inputType="text"
+        android:padding="12dp"
+        android:hint="Soyadınız"
+        android:textColorHint="@color/black"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/anketeBasla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/buton"
+        android:text="ANKETE BAŞLA"
+        android:textSize="20sp" />
+</LinearLayout>
